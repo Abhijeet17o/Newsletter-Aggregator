@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>One Stop Newsletters</title>
+</head>
+<body>
+    {% for section, articles in data.items() %}
+        <h2>{{ section }}</h2>
+        {% for i, article in enumerate(articles) %}
+            {% if i == 1 %}
+                <a href="{{ article }}" target="_blank">{{ article }}</a>
+            {% else %}
+                <p>{{ article }}</p>
+            {% endif %}
+        {% endfor %}
+    {% endfor %}
+</body>
+</html>
